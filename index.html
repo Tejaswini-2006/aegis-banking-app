@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis Banking AI - Secure Vernacular Banking Simulator</title>
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background decorative elements for premium aesthetic -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Header Branding for Simulator Page -->
+  <header class="simulator-header">
+    <div class="logo-area">
+      <svg class="header-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <h1>Aegis Banking AI <span>Interactive Simulator</span></h1>
+    </div>
+    <p class="subtitle">Empowering rural and elderly users with secure, voice-assisted vernacular banking.</p>
+  </header>
+
+  <!-- Simulator Control Toggles Panel (Sticky at top of app frame area) -->
+  <section class="control-panel">
+    <div class="control-card">
+      <div class="control-header">
+        <span class="control-badge">SIMULATOR CONTROLS</span>
+        <h3>Interactive State Toggles</h3>
+      </div>
+      <div class="toggles-grid">
+        <!-- Toggle 1: Normal Mode vs. Aegis Mode -->
+        <div class="toggle-group">
+          <label class="toggle-label">Interface Mode</label>
+          <div class="toggle-switch-container">
+            <span class="toggle-text-left">Normal Mode</span>
+            <button class="toggle-btn" id="toggle-mode" aria-label="Toggle Interface Mode">
+              <span class="toggle-slider"></span>
+            </button>
+            <span class="toggle-text-right active">Aegis Mode</span>
+          </div>
+          <p class="toggle-desc">Switch between standard cluttered layout and voice-first UI.</p>
+        </div>
+
+        <!-- Toggle 2: Safe Environment vs. Phone Scam -->
+        <div class="toggle-group">
+          <label class="toggle-label">Security Threat Environment</label>
+          <div class="toggle-switch-container">
+            <span class="toggle-text-left">Safe Env</span>
+            <button class="toggle-btn warning-toggle" id="toggle-security" aria-label="Toggle Security Threat Mode">
+              <span class="toggle-slider"></span>
+            </button>
+            <span class="toggle-text-right text-warning">Phone Scam (AnyDesk)</span>
+          </div>
+          <p class="toggle-desc">Simulate active background screen sharing / remote mirroring attack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Mobile App Wrapper -->
+  <main class="phone-wrapper">
+    <div class="smartphone">
+      <!-- Phone Notch / Camera -->
+      <div class="notch"></div>
+      
+      <!-- Phone Top Status Bar -->
+      <div class="status-bar">
+        <span class="time" id="status-time">10:30</span>
+        <div class="status-icons">
+          <!-- Network Icon -->
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M2 22h20V2z"/>
+          </svg>
+          <!-- Wifi Icon -->
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 21l-12-12c4.4-4.4 11.6-4.4 16 0z" opacity="0.3"/>
+            <path d="M12 21l-8-8c2.2-2.2 5.8-2.2 8 0z"/>
+          </svg>
+          <!-- Battery Icon -->
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M17 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/>
+            <path d="M21 9h2v6h-2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- App Content Screen -->
+      <div class="app-screen" id="app-screen">
+        
+        <!-- App Header (Navy and Gold) -->
+        <header class="app-header">
+          <div class="app-branding">
+            <div class="app-logo">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <circle cx="12" cy="11" r="3" stroke-width="2"/>
+              </svg>
+              <h2>Aegis Bank</h2>
+            </div>
+            <div class="app-badge" id="aegis-badge">
+              <span class="pulse-dot"></span>
+              AEGIS SECURE
+            </div>
+          </div>
+        </header>
+
+        <!-- SCREEN STATE 1: CLUTTERED NORMAL MODE -->
+        <div class="screen-state" id="state-normal">
+          <div class="normal-hero">
+            <div class="balance-card">
+              <p class="card-label">AVAILABLE BAL (INR) / CLEARING / LIEN</p>
+              <h3>₹ 1,42,854.32</h3>
+              <p class="card-subtext">CR AC: ************4092 | MAB: ₹5,000</p>
+            </div>
+          </div>
+
+          <!-- Advert / Banner Carousel (Confusing to Elderly) -->
+          <div class="ads-banner">
+            <div class="ad-slide">
+              <h4>Get Pre-Approved Personal Loan up to 10L!</h4>
+              <p>Apply with zero doc. *T&C Apply. APR 14.5% - 24%</p>
+            </div>
+          </div>
+
+          <!-- Quick Actions Grid (Cluttered, tiny fonts, complex terms) -->
+          <div class="actions-section">
+            <h4 class="section-title">CHOOSE TRANSACTION TYPE / PORTAL SERVICES</h4>
+            <div class="cluttered-grid">
+              <button class="clutter-btn">
+                <span class="btn-icon">💸</span>
+                <span>Transfer (IMPS/RTGS/NEFT)</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">📋</span>
+                <span>KYC Verification / Re-KYC Form</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">📈</span>
+                <span>FD / RD & Sovereign Gold Bonds</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">📄</span>
+                <span>E-Statement / Tax Certificates</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">📱</span>
+                <span>UPI ID & Mandate Management</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">🔌</span>
+                <span>Bill Pay / Bharat BillPay (BBPS)</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">🛡️</span>
+                <span>PMJJBY / PMSBY Insurance Schemes</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">📈</span>
+                <span>Mutual Funds / ASBA Block</span>
+              </button>
+              <button class="clutter-btn">
+                <span class="btn-icon">⚙️</span>
+                <span>Account Services & Limit Set</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Complex Financial News / Ticker -->
+          <div class="financial-ticker">
+            <p><strong>ALERT:</strong> Link PAN with Aadhaar before June 30th to avoid account freeze. Form 15G/15H submission window open for FY2026-27.</p>
+          </div>
+        </div>
+
+        <!-- SCREEN STATE 2: CLEAN AEGIS MODE -->
+        <div class="screen-state active" id="state-aegis">
+          <!-- Welcome Bar (Bilingual, high readability) -->
+          <div class="aegis-welcome">
+            <div>
+              <p class="aegis-subtitle">Namaste / नमस्ते</p>
+              <h3>Savitri Bai</h3>
+            </div>
+            <div class="aegis-balance-summary">
+              <span class="bal-lbl">Balance / शेष राशि:</span>
+              <span class="bal-amt">₹1,42,854</span>
+            </div>
+          </div>
+
+          <!-- Massive Prominent Voice Command Area -->
+          <div class="voice-command-container">
+            <p class="voice-instruction">Tap microphone & speak in your language</p>
+            <p class="voice-instruction-vernacular">माइक दबाकर अपनी भाषा में बात करें</p>
+            
+            <!-- Microphone Button -->
+            <button class="giant-mic-btn" id="mic-trigger" aria-label="Tap to speak in Hindi, Marathi, or English">
+              <div class="mic-ripple"></div>
+              <div class="mic-icon-wrapper">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor" class="mic-svg">
+                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                </svg>
+              </div>
+            </button>
+
+            <span class="mic-languages">Hindi • Marathi • English • मराठी • हिंदी</span>
+
+            <!-- Vernacular Waveform Simulation -->
+            <div class="waveform-container" id="waveform">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+
+            <!-- Listening Text Feedback -->
+            <p class="voice-status-text" id="voice-status">Tap to Speak</p>
+          </div>
+
+          <!-- Only 3 Giant Accessible Buttons -->
+          <div class="giant-actions-grid">
+            <button class="giant-btn btn-send" id="btn-action-send">
+              <div class="giant-btn-content">
+                <span class="giant-icon">📲</span>
+                <div class="giant-text">
+                  <span class="title-en">Send Money</span>
+                  <span class="title-hi">पैसे भेजें</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="giant-btn btn-balance" id="btn-action-balance">
+              <div class="giant-btn-content">
+                <span class="giant-icon">💰</span>
+                <div class="giant-text">
+                  <span class="title-en">Check Balance</span>
+                  <span class="title-hi">खाता देखें</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="giant-btn btn-help" id="btn-action-help">
+              <div class="giant-btn-content">
+                <span class="giant-icon">🤝</span>
+                <div class="giant-text">
+                  <span class="title-en">Get Help / Call</span>
+                  <span class="title-hi">मदद लें</span>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- SCREEN STATE 3: SCAM/ANYDESK OVERRIDE SCREEN -->
+        <div class="screen-state" id="state-override">
+          <div class="override-alert-banner">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h2v2z"/>
+            </svg>
+            <span>SECURITY SHIELD ACTIVE / सुरक्षा कवच सक्रिय</span>
+          </div>
+
+          <div class="override-content">
+            <!-- Pulsing/Flashing Security Padlock -->
+            <div class="padlock-wrapper">
+              <div class="pulse-ring"></div>
+              <div class="padlock-icon">
+                <svg viewBox="0 0 24 24" width="80" height="80" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Intercept message details -->
+            <h2 class="override-title">CRITICAL ALERT</h2>
+            <h3 class="override-subtitle">Background Threat Intercepted</h3>
+            
+            <div class="alert-message-box">
+              <p class="override-msg"><strong>Background Threat Detected (Active Call / Screen Share).</strong></p>
+              <p class="override-msg-vernacular">रिमोट स्क्रीन शेयरिंग (AnyDesk/TeamViewer) या संदिग्ध कॉल सक्रिय है।</p>
+              <p class="override-msg-action">Transaction frozen automatically to protect your funds. Account secured.</p>
+            </div>
+
+            <!-- Threat interception visual logs -->
+            <div class="threat-logs">
+              <div class="log-item blocked">
+                <span class="status-indicator"></span>
+                <span>BLOCKED: AnyDesk Remote Control Request</span>
+              </div>
+              <div class="log-item blocked">
+                <span class="status-indicator"></span>
+                <span>BLOCKED: Vulnerable Spliced Call Intercepted</span>
+              </div>
+              <div class="log-item active-shield">
+                <span class="status-indicator-green"></span>
+                <span>AEGIS SAFE-MODE: Autoshield Active (SBI Secure Shield)</span>
+              </div>
+            </div>
+            
+            <!-- Action Button for elderly user to call for official verified help -->
+            <button class="emergency-help-btn" id="emergency-call">
+              📞 Talk to Verified Bank Officer / बैंक अधिकारी से बात करें
+            </button>
+          </div>
+        </div>
+
+        <!-- Success Modal Notification Card (Tapping Mic trigger) -->
+        <div class="voice-success-modal" id="success-modal">
+          <div class="modal-card">
+            <div class="success-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            </div>
+            <h3>Transaction Successful</h3>
+            <p class="success-subtitle">सफल भुगतान</p>
+            <div class="success-details">
+              <span class="amount-badge">₹ 500</span>
+              <p>Sent to: <strong>Ramesh Kumar (Son)</strong></p>
+              <p class="success-subtext">via Aegis Voice Command Assistant</p>
+            </div>
+            <button class="close-modal-btn" id="close-modal">OK / ठीक है</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Phone Home Button bar -->
+      <div class="home-bar"></div>
+    </div>
+  </main>
+
+  <!-- Sticky Footer Details -->
+  <footer class="app-footer">
+    <p>Submitted by: <strong>Tejaswini Vitthal Rakhunde</strong> | Theme: <strong>Digital Adoption</strong> | <strong>SBI Hackathon @ GFF 2026</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
