@@ -1,0 +1,26 @@
+{
+  "name": "aegis-banking-app",
+  "version": "1.0.0",
+  "description": "Aegis Banking AI - Safe & Adaptive Voice Assistant for Rural & Elderly Users (SBI Hackathon @ GFF 2026)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test test/**/*.test.js"
+  },
+  "keywords": [
+    "banking",
+    "ai",
+    "voice-assistant",
+    "accessibility",
+    "vernacular",
+    "fraud-prevention",
+    "sbi-hackathon"
+  ],
+  "author": "Tejaswini Vitthal Rakhunde",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
